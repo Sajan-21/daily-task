@@ -154,6 +154,143 @@ function Factorial() {
 Factorial();
 console.log('\n\n\n');
 
+//array method tasks
+{
+
+    const people = [
+        {name : 'Alice', age : 30, city : 'newYork'},
+        {name : 'Bob', age : 25, city : 'Los Angeles'},
+        {name : 'Charlie', age : 35, city : 'Chicago'},
+        {name : 'David', age : 30, city : 'newYork'},
+        {name : 'Eve', age : 28, city : 'Los Angeles'}
+    ];
+
+    //forEach-print names in uppercase
+    
+    people.forEach(item => {
+        
+        let names = item.name;
+        console.log("names converted to uppercase : ",names.toUpperCase())
+        
+    });
+    console.log("\n\n");
+
+    people.forEach(item => {
+        
+        let ages = item.age;
+        console.log(item.name + " + 5 : ",ages+5);
+        
+    });
+    console.log("\n\n");
+
+    people.forEach(item => {
+
+        console.log("cities : ",item.city);
+        
+    });
+    console.log("\n\n");
+
+    let person = people.find(item => {
+        return item.name == "Charlie";
+    });
+    console.log(person);
+
+    let place = people.find(item => {
+
+        return item.city == "Chicago";
+        
+    });
+    console.log(place);
+    console.log("\n\n\n");
+
+    //filter
+    
+    let abovethirty = people.filter(item => {
+        
+        return item.age >= 30;
+    });
+    console.log(abovethirty);
+
+    let cityNewyork = people.filter(item => {
+        
+        return item.city == "newYork";
+    });
+    console.log(cityNewyork);
+
+
+    let nameLength = people.filter(item => {
+        let name2 = item.name;
+        return name2.length>=4;
+
+    });
+    console.log(nameLength);
+    console.log("\n\n\n");
+
+    //map
+
+    let arrAges = people.map(item => {
+        return item.age;
+    });
+    console.log(arrAges);
+
+    people.map(item => {
+        console.log("I am "+ item.name + " my age is " + item.age + ". and I am living in " + item.city);  
+    });
+
+
+}
+console.log('\n\n\n');
+
+//constructor
+{
+    function animal (name,colour){
+        this.name=name;
+        this.colour=colour;
+        // this.weight;
+        this.display = function (){
+            console.log(`my pet animal is ${this.name}, ${this.colour} is my pet's colour.`);
+        }
+    }
+
+    let animal1 = new animal("lion","brown");
+    animal1.display();
+
+}
+console.log("\n\n\n");
+
+//adding new objects
+{
+    class animal{
+        name;
+        colour;
+        weight;
+
+        constructor(name,colour,weight){
+            this.name = name;
+            this.colour = colour;
+            this.weight = weight;
+        }
+
+        display = function () {
+            console.log(`my pet animal is ${this.name}, ${this.colour} is my pet's colour.`);
+        }
+    }
+
+    let animal1 = new animal("horse","white");
+    animal1.display();
+
+    let animal2 = new animal("cat","black","20 kg");
+    // console.log(animal2);
+
+    animal.prototype.getWeight = function (){
+        console.log(`my pet animal is ${this.name}, ${this.colour} is my pet's colour. Weight is ${this.weight}.`);
+    }
+
+    animal2.getWeight();
+
+
+}
+
 
 
 
