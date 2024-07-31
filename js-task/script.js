@@ -288,9 +288,47 @@ console.log("\n\n\n");
 
     animal2.getWeight();
 
+}
+console.log("\n\n\n");
+
+//inheritance
+{
+    class Cars{
+        name;
+        color;
+
+        constructor(name){
+            this.name = name;
+        }
+
+        display(){
+            console.log(`${this.name} is running`);
+        }
+
+    }
+
+    class RacingCars extends Cars{
+        display(){
+            console.log(`${this.color} ${this.name} is drifting`);
+        }
+
+        set Color(color){
+            this.color = color;
+        }
+        get Color(){
+            return this.color;
+        }
+
+    }
+
+    let ObjCars = new Cars("GTR");
+    ObjCars.display();
+    console.log("\n");
+
+
+    let carsthings = new RacingCars ("GTR");
+    carsthings.color = "dark blue";
+    carsthings.display();
 
 }
-
-
-
 
