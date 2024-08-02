@@ -331,4 +331,80 @@ console.log("\n\n\n");
     carsthings.display();
 
 }
+console.log("\n\n\n");
+
+//task using object orientation
+{
+    class Peragraph {
+        pera;
+
+        constructor(content) {
+            this.pera = document.createElement('text');
+            this.pera.innerHTML  = content;
+            document.body.appendChild(this.pera);
+            this.pera.style.color = "blue";
+        }
+        onClick (fn) {
+            this.pera.onclick = fn;
+        }
+        
+    }
+
+    let ObjPera1 = new Peragraph ('Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ea culpa dignissimos perspiciatis, illo repudiandae adipisci sequi reprehenderit magnam accusamus incidunt similique distinctio sint eius vitae nesciunt molestiae saepe quo quibusdam non quae libero quisquam dolor. Corrupti voluptates distinctio velit vitae commodi, odit autem? Sunt, nulla! Mollitia consequatur quis doloribus');
+
+    ObjPera1.onClick (function () {
+        console.log("text clicked...");
+    })
+
+
+
+    class NewPera extends Peragraph {
+
+        constructor (content) {
+            super (content);
+            this.pera.style.color = "red";
+        }
+
+        onClick (fn) {
+            this.pera.onclick = function () {
+                this.pera.style.color = "yellow";
+                this.pera.style.background = "black";
+                this.pera.style.
+                fn ();
+            }.bind(this);
+        }
+
+        mouseOver (fn) {
+            this.pera.onmouseover = function () {
+                this.pera.style.fontSize = 20 + 'px';
+                fn();
+            }.bind(this);
+            
+        }
+
+        mouseOut (fn) {
+            this.pera.onmouseout = function () {
+                this.pera.style.fontSize = 14 + 'px';
+                fn();
+            }.bind(this);
+            
+        }
+
+    }
+
+    let ObjPera2 = new NewPera ('Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ea culpa dignissimos perspiciatis, illo repudiandae adipisci sequi reprehenderit magnam accusamus incidunt similique distinctio sint eius vitae nesciunt molestiae saepe quo quibusdam non quae libero quisquam dolor. Corrupti voluptates distinctio velit vitae commodi, odit autem? Sunt, nulla! Mollitia consequatur quis doloribus');
+
+    ObjPera2.onClick (function () {
+        console.log("2nd text clicked...");
+    })
+
+    ObjPera2.mouseOver (function () {
+        console.log("2nd text fired...");
+    })
+
+    ObjPera2.mouseOut (function () {
+        console.log("2nd text released...");
+    })
+
+}
 
