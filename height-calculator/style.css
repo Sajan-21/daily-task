@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.page-heading{
+    font-size: 50px;
+    text-shadow: 1px 1px 10px gold;
+}
+
+.selectors{
+    min-width: 200px;
+    border: 1px solid;
+}
